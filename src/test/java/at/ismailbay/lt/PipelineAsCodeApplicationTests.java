@@ -14,7 +14,7 @@ public class PipelineAsCodeApplicationTests {
     public void contextLoads() {}
     
     @Test
-	public void testFail() {
+    public void testFail() {
         Assert.fail("fail on purpose");
     }
 
