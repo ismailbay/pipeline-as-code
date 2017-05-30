@@ -12,10 +12,9 @@ public class PipelineAsCodeApplicationTests {
 
     @Test
     public void contextLoads() {}
-    
-    @Test
+
+    // @Test
     public void testFail() {
         Assert.fail("fail on purpose");
     }
-
 }
