@@ -20,6 +20,6 @@ node {
     }   
 
     stage('packaging') {
-        sh "mvn package -Pprod -DskipTests"
+        sh "mvn package -DskipTests"
     }   
 }
