@@ -3,7 +3,11 @@ node {
     stage('check tools') {
         sh "mvn -version"
         sh "java -version"
-    }   
+    }
+    
+    stage('checkout scm') {
+    	git 'https://github.com/ismailbay/pipeline-as-code.git'
+    }
 
     stage('clean') {
         sh "mvn clean"
