@@ -1,21 +1,10 @@
-node {
-	echo("building pipeline-as-code project ...");
-	
-	stage('clean') {
-		sh "./mvnw clean"
-	}
-	
-	stage('tests') {
-		try {
-			sh "./mvnw test"
-		} catch(err) {
-			throw err 
-		} finally {
-			step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
-		} 
-	}
-	
-	stage('packaging') {
-		sh "./mvnw package -Pprod -DskipTests"
-	}
+pipeline {
+    agent { docker 'maven:3.3.3' }
+    stages {
+        stage('build') {
+            steps {
+                sh 'mvn --version'
+            }
+        }
+    }
 }
