@@ -1,5 +1,6 @@
 package at.ismailbay.lt;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -11,5 +12,10 @@ public class PipelineAsCodeApplicationTests {
 
     @Test
     public void contextLoads() {}
+    
+    @Test
+	public void testFail() {
+        Assert.fail("fail on purpose");
+    }
 
 }
